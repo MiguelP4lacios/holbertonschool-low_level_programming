@@ -1,5 +1,10 @@
 #include <stdio.h>
-/*How to use puts funtion for display a String*/
+
+/**
+   * main - Entry point
+    *
+     * Return: Always 0 (Success)
+      */
 int main(void)
 {
 	puts("\"Programming is like building a multilingual puzzle");

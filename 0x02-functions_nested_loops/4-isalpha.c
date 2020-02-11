@@ -1,8 +1,8 @@
 #include "holberton.h"
 /**
   * _isalpha - say me alphabetic character
-  *
-  * Return: Returns 1 if c is a letter, lowercase or uppercase  
+  * @c: contains the lowercase letter
+  * Return: Returns 1 if c is a letter lowercase or uppercase,
   * Returns 0 otherwise
   *(Success)
   */

@@ -2,23 +2,33 @@
 /**
   * rev_string - reverses a string.
   * @s: contian string to reverse
-  * Return: nothing
+  * Return: nothig
   */
 void rev_string(char *s)
 {
-	int i, k = 0; /*tamaño de la cadena de caracteres*/
+	int i = 0;
 	int j;
-	int aux[10];
+	char *aux_1;
+	char *aux_2;
+	char c;
+
+	aux_1 = s;
+	aux_2 = s;
 
 	while (s[i] != '\0')
 	{
-		aux[i] = s[i];
 		i++;
 	}
-
-	for (j = i; j >= 0; j--)
+	for (j = 0; j < i - 1; j++)
 	{
-		s[j] = aux[k];
-		k++;
+		aux_2++;
+	}
+	for (j = 0; j < i / 2; j++)
+	{
+		c = *aux_2;
+		*aux_2 = *aux_1;
+		*aux_1 = c;
+		aux_1++;
+		aux_2--;
 	}
 }

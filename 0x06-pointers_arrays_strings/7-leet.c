@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
   * leet -  encodes a string into 1337.
   * @s: string to convert
@@ -6,20 +7,21 @@
   */
 char *leet(char *s)
 {
-	int j;
+	int j, i;
+	
+	char array_leet[10] = "aAeEoOtTlL";
+	char num[10] = "4433007711";
+
 
 	for (j = 0; s[j] != '\0'; j++)
 	{
-		if (s[j] == 'a' || s[j] == 'A')
-			s[j] = '4';
-		if (s[j] == 'e' || s[j] == 'E')
-			s[j] = '3';
-		if (s[j] == 'o' || s[j] == 'O')
-			s[j] = '0';
-		if (s[j] == 't' || s[j] == 'T')
-			s[j] = '7';
-		if (s[j] == 'l' || s[j] == 'L')
-			s[j] = '1';
+		for (i = 0; i < 10; i++)
+		{
+			if (s[j] == array_leet[i])
+			{
+				s[j] = num[i];
+			}
+		}
 
 	}
 	return (s);

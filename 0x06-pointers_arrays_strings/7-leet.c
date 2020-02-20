@@ -8,7 +8,7 @@
 char *leet(char *s)
 {
 	int j, i;
-	
+
 	char array_leet[10] = "aAeEoOtTlL";
 	char num[10] = "4433007711";
 

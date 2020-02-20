@@ -1,10 +1,8 @@
 #include "holberton.h"
-#include <ctype.h>
 /**
   * string_toupper - changes all lowercase letters of a string to uppercase.
-  * @a: contian array to reverse.
-  * @n: size of the array.
-  * Return: nothig
+  * @s: string to convert
+  * Return: s in upper
   */
 char *string_toupper(char *s)
 {
@@ -12,7 +10,8 @@ char *string_toupper(char *s)
 
 	for (j = 0;s[j] != '\0'; j++)
 	{
-		s[j] = toupper(s[j]);
+		if (s[j] >= 'a' && s[j] <= 'z')
+			s[j] = s[j] - 32;
 
 	}
 	return (s);

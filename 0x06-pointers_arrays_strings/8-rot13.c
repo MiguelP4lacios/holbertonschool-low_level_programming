@@ -5,25 +5,25 @@
   * @s: string to convert
   * Return: s econdes
   */
-char *rot13(char *s)
+char *rot13(char *r)
 {
 	int j, i;
 
-	char input[] = "ABCDEFGHIJKLMNOPQRSTUVWZabcdefghijklmnopqrstuvwz";
-	char output[] = "NOPQRSTUVWZABCDEFGHIJKLMnopqrstuvwzabcdefghijklm";
+	char input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 
-	for (j = 0; s[j] != '\0'; j++)
+	for (j = 0; r[j] != '\0'; j++)
 	{
-		for (i = 0; i < 52; i++)
+		for (i = 0; input[i] != '\0'; i++)
 		{
-			if (s[j] == input[i])
+			if (r[j] == input[i])
 			{
-				s[j] = output[i];
+				r[j] = output[i];
 				break;
 			}
 		}
 
 	}
-	return (s);
+	return (r);
 }

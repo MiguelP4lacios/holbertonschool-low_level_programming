@@ -1,8 +1,8 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
-  *  rot13-  encodes a string into rot13.
-  * @s: string to convert
+  * rot13-  encodes a string into rot13.
+  * @r: string to convert
   * Return: s econdes
   */
 char *rot13(char *r)

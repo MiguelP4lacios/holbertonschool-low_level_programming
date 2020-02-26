@@ -30,6 +30,7 @@ int main(void)
 		{
 			max = factores[i];
 		}
+		printf("%d ", factores[i]);
 		i++;
 	}
 	printf("%d\n", max);

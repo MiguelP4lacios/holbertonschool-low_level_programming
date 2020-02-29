@@ -29,18 +29,18 @@ int main(int argc, char *argv[])
 		{
 			if (monto >= 25)
 				monto -= 25;
-			if (monto >= 10)
+			else if (monto >= 10)
 				monto -= 10;
-			if (monto >= 5)
+			else if (monto >= 5)
 				monto -= 5;
-			if (monto >= 2)
+			else if (monto >= 2)
 				monto -= 2;
-			if (monto >= 1)
+			else
 				monto -= 1;
 			i++;
 		}
 		printf("%d\n", i);
-		return (0);
 	}
+	return (0);
 }
 

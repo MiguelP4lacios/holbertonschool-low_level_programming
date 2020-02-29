@@ -25,16 +25,19 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		while (monto >= 25)
-			monto -= 25, i++;
-		while (monto >= 10)
-			monto -= 10, i++;
-		while (monto >= 5)
-			monto -= 5, i++;
-		while (monto >= 2)
-			monto -= 2, i++;
-		while (monto >= 1)
-			monto -= 1, i++;
+		while (monto > 0)
+		{
+			while (monto >= 25)
+				monto -= 25, i++;
+			while (monto >= 10)
+				monto -= 10, i++;
+			while (monto >= 5)
+				monto -= 5, i++;
+			while (monto >= 2)
+				monto -= 2, i++;
+			while (monto >= 1)
+				monto -= 1, i++;
+		}
 		printf("%d\n", i);
 		return (0);
 	}

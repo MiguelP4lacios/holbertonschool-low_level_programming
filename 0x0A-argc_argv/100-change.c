@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 
 	int monto = atoi(argv[1]);
 
-	if (monto <= 0)
+	if (argc < 0)
 	{
 		printf("%d\n", 0);
 		return (0);

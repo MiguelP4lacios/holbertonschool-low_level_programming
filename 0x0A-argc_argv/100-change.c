@@ -1,45 +1,64 @@
 #include <stdio.h>
 #include <stdlib.h>
+int get_change(int amount);
 /**
-  * main - prints the minimum number of coins.
-  * @argc: number argument
-  * @argv: pointer of argument
-  * Return: 0 or 1(Error)
+  * main - entry point for change program
+  *
+  * @argc: arg counter, # of args passed
+  * @argv: array of args passed
+  *
+  * Return: 0 for success, 1 for error
   */
 int main(int argc, char *argv[])
 {
-	int i = 0;
-	
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	
-	int monto = atoi(argv[1]);
-	
-	if (monto < 0)
-	{
-		printf("%d\n", 0);
-		return (0);
-	}
-	else
-	{
-		while (monto > 0)
-		{
-			if (monto >= 25)
-				monto -= 25;
-			else if (monto >= 10)
-				monto -= 10;
-			else if (monto >= 5)
-				monto -= 5;
-			else if (monto >= 2)
-				monto -= 2;
-			else
-				monto -= 1;
-			i++;
-		}
-		printf("%d\n", i);
-	}
+	printf("%d\n", get_change(atoi(argv[1])));
 	return (0);
+}
+/**
+  * get_change - gets smallest amount of coins needed
+  *
+  * @amount: amount to find num coins needed for
+  *
+  * Return: number of coins needed to make change
+  */
+int get_change(int amount)
+{
+	/* qs: quarters, ds: dimes, ns: nickles */
+	/* tcs: two cents, ocs: one cents */
+	int qs, ds, ns, tcs, ocs;
+
+	qs = 0, ds = 0, ns = 0, tcs = 0, ocs = 0;
+	if (amount <= 0)
+		return (0);
+	while (amount >= 25)
+	{
+		amount -= 25;
+		qs++;
+	}
+	while (amount >= 10)
+	{
+		amount -= 10;
+		ds++;
+	}
+	while (amount >= 5)
+	{
+		amount -= 5;
+		ns++;
+	}
+	while (amount >= 2)
+	{
+		amount -= 2;
+		tcs++;
+	}
+	while (amount >= 1)
+	{
+		amount -= 1;
+		ocs++;
+	}
+	return (qs + ds + ns + tcs + ocs);
 }

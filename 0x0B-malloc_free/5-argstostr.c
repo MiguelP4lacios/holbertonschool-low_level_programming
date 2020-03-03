@@ -1,19 +1,18 @@
 #include <stdlib.h>
 /**
   * argstostr - concatenates all the arguments of your program
-  * @argc: number argument
-  * @argv: pointer of argument
+  * @ac: number argument
+  * @av: pointer of argument
   * Return: p or NULL
   */
 char *argstostr(int ac, char **av)
 {
 	int i, j, len, p_len;
 	char *p;
-	
+
 	len = 0;
 	p_len = 0;
-	
-	if (ac == 0 || av == 0)
+	if (ac == 0 || av == NULL)
 		return (NULL);
 	for (i = 0; i < ac ; i++)
 	{

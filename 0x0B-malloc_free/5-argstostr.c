@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 /**
   * argstostr - concatenates all the arguments of your program
   * @ac: number argument
@@ -17,9 +18,11 @@ char *argstostr(int ac, char **av)
 	for (i = 0; i < ac ; i++)
 	{
 		for (j = 0; *(*(av + i) + j) != '\0'; j++)
+		{
 			len++;
+		}
 	}
-	p = malloc(sizeof(char) * (len + 1));
+	p = malloc(sizeof(char) * ( ac + len + 1));
 	if (p == NULL)
 		return (NULL);
 	for (i = 0; i < ac ; i++)

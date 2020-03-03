@@ -8,7 +8,7 @@ int str_len(char *s)
 {
 	int len = 0;
 
-	while (s[len] != '\0' && s)
+	while (s[len] != '\0')
 		len++;
 	return (len);
 }
@@ -33,12 +33,12 @@ char *str_concat(char *s1, char *s2)
 	A = malloc(sizeof(char) * t);
 	if (A == NULL)
 		return (NULL);
-	for (j = 0; s1 && s1[j] != '\0'; j++)
+	for (j = 0; s1[j] != '\0'; j++)
 	{
 		A[i] = s1[i];
 		i++;
 	}
-	for (j = 0; s2 && s2[j] != '\0'; j++)
+	for (j = 0; s2[j] != '\0'; j++)
 	{
 		A[i] = s2[j];
 		i++;

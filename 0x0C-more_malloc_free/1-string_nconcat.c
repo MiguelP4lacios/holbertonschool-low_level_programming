@@ -1,7 +1,7 @@
 #include <stdlib.h>
 int str_len(char *s);
 /**
-  * string_concat - concatenates two strings.
+  * string_nconcat - concatenates two strings.
   * @s1: string 1
   * @s2: string 2
   * @n: n for string 2

@@ -12,7 +12,7 @@
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	va_list my_arg;
-	unsigned int i;
+	unsigned int i, integer;
 
 	if (separator == NULL)
 	{
@@ -22,13 +22,14 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	va_start(my_arg, n);
 	for (i = 0; i < n; i++)
 	{
+		integer = va_arg(my_arg, int);
 		if (!(i == n - 1))
 		{
-			printf("%d%s", va_arg(my_arg, int), separator);
+			printf("%d%s", integer, separator);
 		}
 		else
 		{
-			printf("%d\n", va_arg(my_arg, int));
+			printf("%d\n", integer);
 		}
 	}
 	va_end(my_arg);

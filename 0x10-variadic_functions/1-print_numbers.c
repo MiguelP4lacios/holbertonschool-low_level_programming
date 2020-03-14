@@ -16,7 +16,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	if (separator == NULL)
 	{
-		return;
+		separator = "";
 
 	}
 	va_start(my_arg, n);

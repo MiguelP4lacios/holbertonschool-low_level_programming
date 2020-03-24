@@ -18,7 +18,7 @@
 		free(tmp);
 		return (1);
 	}
-	for (i = 0; i < index; i++)
+	for (i = 0; i < index && tmp; i++)
 		tmp = tmp->next;
 	if (tmp == NULL || tmp->next == NULL)
 		return (-1);

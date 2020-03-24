@@ -2,7 +2,8 @@
 /**
  * add_nodeint - adds a new node at the beginning of a
  * listint_t list.
- * @h: head list.
+ * @n: head list.
+ * @head: Doble pointer
  *
  * Return: number of node.
  */
@@ -21,5 +22,5 @@ listint_t *add_nodeint(listint_t **head, const int n)
 	new_node->n = n;
 	new_node->next = *head;
 	*head = new_node;
-	return(*head);
+	return (*head);
 }

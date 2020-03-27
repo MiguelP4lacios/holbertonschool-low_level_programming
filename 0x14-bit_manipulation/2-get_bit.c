@@ -10,7 +10,7 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned int long pos_exp = 1;
 	unsigned int i;
-
+	
 	for (i = 0; i < index; i++)
 	{
 		if (pos_exp > pos_exp << 1)

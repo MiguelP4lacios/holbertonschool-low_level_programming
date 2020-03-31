@@ -20,7 +20,6 @@ int create_file(const char *filename, char *text_content)
 	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC | O_EXCL, 0600);
 	if (fd == -1)
 	{
-		printf ("enrro");
 		if (errno == EEXIST)
 		{
 			fd = open(filename, O_WRONLY | O_TRUNC);

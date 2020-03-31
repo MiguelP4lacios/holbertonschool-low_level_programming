@@ -47,5 +47,5 @@ int str_len(char *s)
 
 	while (s[len++])
 		continue;
-	return (len);
+	return (len - 1);
 }

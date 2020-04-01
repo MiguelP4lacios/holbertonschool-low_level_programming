@@ -39,15 +39,7 @@ int main(int ac, char **av)
 		dprintf(STDOUT_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
-	if (close(fd1) == -1)
-	{
-		dprintf(STDOUT_FILENO, "Error: Can't close fd %d", fd1);
-		exit(100);
-	}
-	if (close(fd2) == -1)
-	{
-		dprintf(STDOUT_FILENO, "Error: Can't close fd %d", fd2);
-		exit(100);
-	}
+	close(fd1);
+	close(fd2);
 	return (0);
 }

@@ -7,7 +7,7 @@
  *
  * Return: Always 0.
  */
-int main(int ac, char **av[])
+int main(int ac, char *av[])
 {
 	int fd1, fd2;
 	int count = 0;
@@ -18,7 +18,7 @@ int main(int ac, char **av[])
 		dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n");
 		exit(97);
 	}
-	if (av == NULL)
+	if (av[1] == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);

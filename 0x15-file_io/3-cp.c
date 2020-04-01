@@ -15,12 +15,12 @@ int main(int ac, char **av)
 
 	if (ac != 3)
 	{
-		dprintf(1, "Usage: %s file_from file_to\n", av[0]);
+		dprintf(STDOUT_FILENO, "Usage: %s file_from file_to\n", av[0]);
 		exit(97);
 	}
 	if (av == NULL)
 	{
-		dprintf(1, "Error: Can't read from file %s\n", av[1]);
+		dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
 	fd1 = open(av[1], O_RDONLY);
@@ -29,14 +29,14 @@ int main(int ac, char **av)
 	fd2 = open(av[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
 	if (fd2 == -1)
 	{
-		dprintf(1, "Error: Can't write to %s\n", av[2]);
+		dprintf(STDOUT_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
 	count = read(fd1, buffer, 1024);
 	write(fd2, buffer, count);
 	if (fd2 == -1)
 	{
-		dprintf(1, "Error: Can't write to %s\n", av[2]);
+		dprintf(STDOUT_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
 	close(fd1);

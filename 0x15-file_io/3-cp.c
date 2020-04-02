@@ -29,9 +29,11 @@ int main(int ac, char *av[])
 		if (count1 == -1)
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99);
 	} while (count == 1024);
-	if (close(fd1) == -1)
+	count1 = close(fd1);
+	if (count1 == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1), exit(100);
-	if (close(fd2) == -1)
+	count1 = close(fd2);
+	if (count1 == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2), exit(100);
 	return (0);
 }

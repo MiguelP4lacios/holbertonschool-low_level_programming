@@ -9,7 +9,7 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *inst, *corrent;
+	dlistint_t *inst, *corrent = *h;
 	size_t i = 0;
 
 	if (!h)
@@ -29,8 +29,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 	else
 	{
-		corrent = *h;
-
 		for (i = 1; corrent; i++)
 		{
 			if (idx == i && corrent->next != NULL)
@@ -38,6 +36,12 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 				inst->prev = corrent;
 				inst->next = corrent->next;
 				corrent->next->prev = inst;
+				corrent->next = inst;
+				return (inst);
+			}
+			else if (corrent->next == NULL)
+			{
+				inst->prev = corrent;
 				corrent->next = inst;
 				return (inst);
 			}

@@ -35,10 +35,7 @@ dlistint_t *createNode(int data)
 
 	node = malloc(sizeof(dlistint_t));
 	if (node == NULL)
-	{
-		free(node);
 		return (NULL);
-	}
 	node->n = data;
 	node->next = NULL;
 	node->prev = NULL;

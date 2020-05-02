@@ -14,9 +14,12 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	tmp = *head;
 	if (!head)
 		return (NULL);
-	new_node = createNode(n);
+	new_node = malloc(sizeof(dlistint_t));
 	if (new_node == NULL)
 		return (NULL);
+	new_node->n = n;
+	new_node->next = NULL;
+	new_node->prev = NULL;
 	if (*head == NULL)
 	{
 		*head = new_node;
@@ -27,21 +30,4 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	tmp->next = new_node;
 	new_node->prev = tmp;
 	return (new_node);
-}
-/**
- * createNode - It creates a node whit data
- * @data: integer
- * Return: address of the new node
-*/
-dlistint_t *createNode(int data)
-{
-	dlistint_t *node;
-
-	node = malloc(sizeof(dlistint_t));
-	if (node == NULL)
-		return (NULL);
-	node->n = data;
-	node->next = NULL;
-	node->prev = NULL;
-	return (node);
 }

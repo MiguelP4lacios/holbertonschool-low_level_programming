@@ -26,8 +26,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	}
 	else
 	{
-		corrent = corrent->next;
-		for (i = 1; corrent; i++)
+		for (i = 0; corrent; i++)
 		{
 			if (index == i && corrent->next != NULL)
 			{

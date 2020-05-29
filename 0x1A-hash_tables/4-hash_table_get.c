@@ -21,14 +21,12 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	if (!(strcmp(key, "")))
 		return (NULL);
 
-	idx = key_index((unsigned char *)key, slots->size);
+	idx = key_index((const unsigned char *)key, slots->size);
 	corrent = slots->array[idx];
 	while (corrent)
 	{
 		if (!(strcmp(corrent->key, key)))
-		{
 			value = strdup(corrent->value);
-		}
 		corrent = corrent->next;
 	}
 	return (value);

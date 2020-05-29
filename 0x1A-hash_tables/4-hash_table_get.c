@@ -9,23 +9,22 @@
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	const hash_table_t *slots = ht;
 	hash_node_t *corrent;
-	char *value;
+	char *value = NULL;
 	unsigned long int idx;
 
-	if (!slots)
+	if (!ht)
 		return (NULL);
 	if (!key)
 		return (NULL);
-	if (!(strcmp(key, "")))
+	if (!(strlen(key)))
 		return (NULL);
 
-	idx = key_index((const unsigned char *)key, slots->size);
-	corrent = slots->array[idx];
+	idx = key_index((const unsigned char *)key, ht->size);
+	corrent = ht->array[idx];
 	while (corrent)
 	{
-		if (!(strcmp(corrent->key, key)))
+		if (!(strcmp(key, corrent->key)))
 			value = strdup(corrent->value);
 		corrent = corrent->next;
 	}

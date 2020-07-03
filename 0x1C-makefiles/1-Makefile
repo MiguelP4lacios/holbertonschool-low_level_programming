@@ -5,7 +5,7 @@
 .PHONY = all
 
 CC = gcc
-SRC := $(wildcard *.c)
+SRC = $(wildcard *.c)
 
-all:
+all: main.c holberton.c
 	${CC} ${SRC} -o holberton

@@ -11,13 +11,18 @@ OBJ = $(SRC:.c=.o)
 NAME = holberton
 RM = rm
 CFLAGS = -Wall -Werror -Wextra -pedantic
+.PHONY: all
 all: m.h ${OBJ}
 	${CC} ${OBJ} -o ${NAME}
+.PHONY: clean
 clean:
 	${RM} -f *~ ${NAME}
+.PHONY: clean
 oclean:
 	${RM} -f ${OBJ}
 
+.PHONY: fclean
 fclean: clean oclean
 
+.PHONY: re
 re: oclean all

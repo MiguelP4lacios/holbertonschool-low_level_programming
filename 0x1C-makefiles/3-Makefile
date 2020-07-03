@@ -1,0 +1,23 @@
+# Usage:
+# make        # compile all binary
+## The all rule should recompile only the updated source files
+
+
+.PHONY: all clean oclean fclean re
+
+CC = gcc
+SRC = main.c holberton.c
+OBJ = $(SRC:.c=.o)
+NAME = holberton
+RM = rm
+
+all: ${OBJ}
+	${CC} ${OBJ} -o ${NAME}
+clean:
+	${RM} *~ ${NAME}
+oclean:
+	${RM} ${OBJ}
+
+fclean: clean oclean
+
+re: oclean all

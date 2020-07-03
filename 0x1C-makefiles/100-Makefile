@@ -14,7 +14,7 @@ all: m.h ${OBJ}
 .PHONY: clean
 clean:
 	${RM} -f *~ ${NAME}
-.PHONY: clean
+.PHONY: oclean
 oclean:
 	${RM} -f ${OBJ}
 

@@ -2,7 +2,7 @@
 # make        # compile all binary
 
 
-.PHONY = all
+.PHONY: all
 
 CC = gcc
 SRC = $(wildcard *.c)

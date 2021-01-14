@@ -1,4 +1,4 @@
-# Low-level programming & Algorithm - Hatching out 🤖
+# Low-level programming & Algorithm 🤖
 
 This is a repository of low-level Fundamentals created to learn the main principles behind low-level programming, develop logical skills in coding and basic concepts of computer science.
 
